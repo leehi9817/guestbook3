@@ -37,7 +37,7 @@
 				<td>${gVo.no}</td>
 				<td>${gVo.name}</td>
 				<td>${gVo.reg_date}</td>
-				<td><a href="/guestbook3/guest/deleteForm/${gVo.no}">삭제</a></td>
+				<td><a href="/guestbook3/guest/deleteForm?no=${gVo.no}">삭제</a></td>
 			</tr>
 			<tr>
 				<td colspan="4">${gVo.content}</td>

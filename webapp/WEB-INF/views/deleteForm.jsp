@@ -7,7 +7,7 @@
 </head>
 <body>
 	
-	<form action="/guestbook3/guest/delete" method="post">
+	<form action="/guestbook3/guest/delete" method="get">
 		<table>
 			<tr>
 				<td>비밀번호</td>
@@ -18,7 +18,7 @@
 				<td><a href="/guestbook3/guest">메인으로 돌아가기</a></td>
 			</tr>
 		</table>
-		<input type="text" name="no" value="${no}">
+		<input type="text" name="no" value="${param.no}">
 	</form>
 	
 </body>

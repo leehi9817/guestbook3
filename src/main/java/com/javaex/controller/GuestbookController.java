@@ -53,23 +53,22 @@ public class GuestbookController {
 		return "redirect:/guest";
 	}
 
-	@RequestMapping(value="/deleteForm/{no}", method= {RequestMethod.GET, RequestMethod.POST})
-	public String deleteForm(@PathVariable("no") int no) {
+	@RequestMapping(value = "/deleteForm}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String deleteForm(@RequestParam("no") int no, Model model) {
 		System.out.println("GuestbookController>deleteForm()");
-		
+		model.addAttribute("no", no);
 		return "deleteForm";
 	}
-	
+
 	@RequestMapping(value = "/delete", method = { RequestMethod.GET, RequestMethod.POST })
-	public String delete(@RequestParam(value="no") int no,
-						 @RequestParam(value = "password") String password) {
+	public String delete(@RequestParam("no") int no, @RequestParam("password") String password) {
 		System.out.println("GuestbookController>delete()");
-		
+
 		// dao 메모리에 올리기
 		GuestbookDao guestbookDao = new GuestbookDao();
 
 		GuestbookVo guestbookVo = new GuestbookVo(no, password);
-		
+
 		// dao.delete(vo);
 		guestbookDao.delete(guestbookVo);
 
